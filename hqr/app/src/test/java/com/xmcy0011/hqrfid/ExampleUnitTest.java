@@ -1,4 +1,4 @@
-package com.xmcy0011.hqr;
+package cn.nr.hqrfid;
 
 import org.junit.Test;
 

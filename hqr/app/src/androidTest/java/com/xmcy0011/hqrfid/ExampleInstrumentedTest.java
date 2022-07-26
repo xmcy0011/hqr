@@ -1,4 +1,4 @@
-package com.xmcy0011.hqr;
+package cn.nr.hqrfid;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -20,6 +20,6 @@ public class ExampleInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        assertEquals("com.xmcy0011.hqr", appContext.getPackageName());
+        assertEquals("cn.nr.hqrfid", appContext.getPackageName());
     }
 }

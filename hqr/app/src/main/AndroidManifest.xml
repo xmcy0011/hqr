@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.xmcy0011.hqr">
+    package="cn.nr.hqrfid">
 
     <application
         android:allowBackup="true"
@@ -14,7 +14,7 @@
         android:theme="@style/Theme.Hqr"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name="cn.nr.hqrfid.MainActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.Hqr.NoActionBar">
@@ -23,6 +23,12 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+
+        <activity
+            android:name="cn.nr.hqrfid.ydmhapi.YDMHEntryActivity"
+            android:exported="true"
+            android:launchMode="singleTask">
         </activity>
     </application>
 
