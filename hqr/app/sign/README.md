@@ -35,3 +35,15 @@ Is CN=XX, OU=XX, O=XX, L=XX, ST=XX, C=XX correct?
 ```shell
 $ keytool -importkeystore -srckeystore android_mip.keystore -destkeystore android_mip.keystore -deststoretype pkcs12
 ```
+
+## 查看
+
+1. 查看key store
+```shell
+keytool -list -v -keystore hqr/app/sign/android_mip.jks
+```
+
+2. 查看apk解压后
+```shell
+keytool -printcert -file META-INF/CERT.RSA
+```
