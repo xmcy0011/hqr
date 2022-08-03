@@ -78,13 +78,16 @@ public class YDMHEntryActivity extends Activity implements IYDMHAPIEventHandler 
                         String obj = (String) msg.obj;
                         Log.i(TAG, "用户信息获取成功: " + msg.obj);
 
-                        Toast.makeText(YDMHEntryActivity.this, obj, Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(YDMHEntryActivity.this, obj, Toast.LENGTH_SHORT).show();
                         if (obj != null) {
                             textView.setText("用户信息获取成功");
                         }
 
                         UserInfo.getInstance().saveUserInfo(obj);
-
+                        Intent intent = new Intent(YDMHEntryActivity.this, MainActivity.class);
+                        // 设置自己为栈顶，退出后清楚所有activity
+                        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        startActivity(intent);
                         finish();
                         break;
                     default:

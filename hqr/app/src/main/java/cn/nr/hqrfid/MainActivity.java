@@ -72,6 +72,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void updateData() {
-        mWebView.loadUrl("http://2.0.0.1:20280/");
+        mWebView.loadUrl("http://2.0.0.1:20280/home");
     }
+//    private void updateData() {
+//        mWebView.loadUrl("http://www.baidu.com");
+//    }
+
 }
