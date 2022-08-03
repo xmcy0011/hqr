@@ -5,60 +5,36 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-<!--    <android.support.design.widget.AppBarLayout-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:theme="@style/Theme.Hqr.AppBarOverlay">-->
+    <!--    <android.support.design.widget.AppBarLayout-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:theme="@style/Theme.Hqr.AppBarOverlay">-->
 
-<!--        <android.support.v7.widget.Toolbar-->
-<!--            android:id="@+id/toolbar"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="?attr/actionBarSize"-->
-<!--            android:background="?attr/colorPrimary"-->
-<!--            app:popupTheme="@style/Theme.Hqr.PopupOverlay" />-->
+    <!--        <android.support.v7.widget.Toolbar-->
+    <!--            android:id="@+id/toolbar"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="?attr/actionBarSize"-->
+    <!--            android:background="?attr/colorPrimary"-->
+    <!--            app:popupTheme="@style/Theme.Hqr.PopupOverlay" />-->
 
-<!--    </android.support.design.widget.AppBarLayout>-->
+    <!--    </android.support.design.widget.AppBarLayout>-->
 
-<!--    <WebView-->
-<!--        android:id="@+id/mainWebView"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent" />-->
-
-    <LinearLayout
-        android:id="@+id/root_internal_login"
+    <com.zq.pullrefreshwebview.widget.PtrClassicFrameLayout
+        xmlns:cube_ptr="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/rotate_header_web_view_frame"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center_horizontal"
-        android:orientation="vertical" >
+        android:background="@android:color/white"
+        cube_ptr:ptr_duration_to_close="200"
+        cube_ptr:ptr_duration_to_close_header="1000"
+        cube_ptr:ptr_keep_header_when_refresh="true"
+        cube_ptr:ptr_pull_to_fresh="false"
+        cube_ptr:ptr_ratio_of_header_height_to_refresh="1.2"
+        cube_ptr:ptr_resistance="1.8">
 
-        <ImageView
-            android:id="@+id/iv_internal_account_head"
-            android:layout_width="75dp"
-            android:layout_height="75dp"
-            android:layout_marginTop="42dp"
-            android:scaleType="fitXY"
-            android:src="@mipmap/ic_launcher" />
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:layout_marginLeft="18dp"
-            android:layout_marginRight="18dp"
-            android:layout_marginTop="2dp"
-            android:gravity="center"
-            android:text="测试应用"
-            android:textSize="15sp" />
-        <Button
-            android:id="@+id/button"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:layout_marginLeft="18dp"
-            android:layout_marginRight="18dp"
-            android:layout_marginTop="50dp"
-            android:background="@android:color/holo_blue_bright"
-            android:gravity="center"
-            android:text="使用移动商店登录"
-            android:textColor="#ffffff"
-            android:textSize="18sp" />
-    </LinearLayout>
-
+        <WebView
+            android:id="@+id/mainWebView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </com.zq.pullrefreshwebview.widget.PtrClassicFrameLayout>
 </android.support.design.widget.CoordinatorLayout>
