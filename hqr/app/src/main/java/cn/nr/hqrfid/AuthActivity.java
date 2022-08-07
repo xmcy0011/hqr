@@ -28,7 +28,7 @@ public class AuthActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_auth);
 
-        if (UserInfo.getInstance().getUserInfo() != null && !UserInfo.getInstance().getUserInfo().isEmpty()) {
+        if (UserInfo.getInstance().getUserName() != null && !UserInfo.getInstance().getUserName().isEmpty()) {
             startActivity(new Intent(AuthActivity.this, MainActivity.class));
             finish();
         }
