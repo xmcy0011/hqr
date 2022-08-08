@@ -53,6 +53,12 @@ public class AuthActivity extends AppCompatActivity {
                 finish();
             }
         });
+
+        boolean result_ok = mOauthManager.ydmhAuth(api, AuthActivity.this);
+        if (!result_ok) {
+            Toast.makeText(AuthActivity.this, "请先安装移动商店", Toast.LENGTH_SHORT).show();
+        }
+        finish();
     }
 
     private void createHandler() {

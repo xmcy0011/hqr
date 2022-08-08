@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         UserInfo u = UserInfo.getInstance();
         Log.i("MainActivity", "onCreate: get userName:" + u.getUserName());
-        String url = "http://2.0.0.1:20280/page/index/index?userName=" + u.getUserName();
+        String url = "http://2.0.0.1:20280/pages/index/index?userName=" + u.getUserName();
 
         mWebView = (WebView) findViewById(R.id.mainWebView);
         mPtrFrame = (PtrClassicFrameLayout) findViewById(R.id.rotate_header_web_view_frame);
