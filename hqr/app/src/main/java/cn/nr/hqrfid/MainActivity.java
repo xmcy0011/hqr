@@ -23,14 +23,16 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        WebView.setWebContentsDebuggingEnabled(true);
 
         setContentView(R.layout.activity_main);
         UserInfo u = UserInfo.getInstance();
         Log.i("MainActivity", "onCreate: get userName:" + u.getUserName());
-        String url = "http://2.0.0.1:20280/pages/index/index?userName=" + u.getUserName();
+
+        String url = "file:///android_asset/pages/index/index?userName=" + u.getUserName();
+//        String url = "http://2.0.0.1:20280/pages/index/index?userName=" + u.getUserName();
 
         mWebView = (WebView) findViewById(R.id.mainWebView);
+        WebView.setWebContentsDebuggingEnabled(true);
         mPtrFrame = (PtrClassicFrameLayout) findViewById(R.id.rotate_header_web_view_frame);
         initView(url);
     }
