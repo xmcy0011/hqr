@@ -16,4 +16,10 @@
     <style name="Theme.Hqr.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.Hqr.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="DCloudActivityTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:colorEdgeEffect">#333333</item>
+<!--        <item name="android:windowBackground">@color/ime_background</item>-->
+    </style>
 </resources>

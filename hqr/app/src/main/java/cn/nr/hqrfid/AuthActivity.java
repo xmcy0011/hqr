@@ -3,7 +3,7 @@ package cn.nr.hqrfid;
 import android.content.Intent;
 import android.os.Handler;
 import android.os.Message;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -29,7 +29,7 @@ public class AuthActivity extends AppCompatActivity {
         setContentView(R.layout.activity_auth);
 
         if (UserInfo.getInstance().getUserInfo() != null && !UserInfo.getInstance().getUserInfo().isEmpty()) {
-            startActivity(new Intent(AuthActivity.this, MainActivity.class));
+            startActivity(new Intent(AuthActivity.this, io.dcloud.PandoraEntry.class));
             finish();
         }
 
@@ -74,7 +74,7 @@ public class AuthActivity extends AppCompatActivity {
                         Toast.makeText(AuthActivity.this, obj, Toast.LENGTH_SHORT).show();
 
                         UserInfo.getInstance().saveUserInfo(obj);
-                        startActivity(new Intent(AuthActivity.this, MainActivity.class));
+                        startActivity(new Intent(AuthActivity.this, io.dcloud.PandoraEntry.class));
                         finish();
                         break;
                     default:
