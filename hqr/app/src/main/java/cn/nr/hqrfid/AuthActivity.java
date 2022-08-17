@@ -28,7 +28,7 @@ public class AuthActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_auth);
 
-        if (UserInfo.getInstance().getUserInfo() != null && !UserInfo.getInstance().getUserInfo().isEmpty()) {
+        if (UserInfo.getInstance().getUserName() != null && !UserInfo.getInstance().getUserName().isEmpty()) {
             startActivity(new Intent(AuthActivity.this, io.dcloud.PandoraEntry.class));
             finish();
         }
@@ -53,6 +53,12 @@ public class AuthActivity extends AppCompatActivity {
                 finish();
             }
         });
+
+        boolean result_ok = mOauthManager.ydmhAuth(api, AuthActivity.this);
+        if (!result_ok) {
+            Toast.makeText(AuthActivity.this, "请先安装移动商店", Toast.LENGTH_SHORT).show();
+        }
+        finish();
     }
 
     private void createHandler() {

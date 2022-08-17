@@ -1,7 +1,10 @@
 package cn.nr.hqrfid;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.util.Log;
 import android.view.View;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -23,14 +26,21 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_main);
         UserInfo u = UserInfo.getInstance();
+        Log.i("MainActivity", "onCreate: get userName:" + u.getUserName());
+
+        String url = "file:///android_asset/pages/index/index?userName=" + u.getUserName();
+//        String url = "http://2.0.0.1:20280/pages/index/index?userName=" + u.getUserName();
 
         mWebView = (WebView) findViewById(R.id.mainWebView);
-        mWebView.getSettings().setJavaScriptEnabled(true);
+        WebView.setWebContentsDebuggingEnabled(true);
         mPtrFrame = (PtrClassicFrameLayout) findViewById(R.id.rotate_header_web_view_frame);
-        initView();
+        initView(url);
     }
 
-    private void initView() {
+    @SuppressLint("SetJavaScriptEnabled")
+    private void initView(String url) {
+        Log.i("MainActivity", "initView url=" + url);
+
         mWebView.setWebViewClient(new WebViewClient() {
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, String url) {
@@ -45,6 +55,11 @@ public class MainActivity extends AppCompatActivity {
                 mPtrFrame.refreshComplete();
             }
         });
+        mWebView.getSettings().setJavaScriptEnabled(true);
+        mWebView.getSettings().setDomStorageEnabled(true);
+        mWebView.getSettings().setAllowFileAccessFromFileURLs(true);
+        mWebView.getSettings().setAllowUniversalAccessFromFileURLs(true);
+
         mPtrFrame.setLastUpdateTimeRelateObject(this);
         mPtrFrame.setPtrHandler(new PtrHandler() {
             @Override
@@ -54,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onRefreshBegin(PtrFrameLayout frame) {
-                updateData();
+                updateData(url);
             }
         });
         mPtrFrame.setResistance(1.7f);
@@ -71,11 +86,9 @@ public class MainActivity extends AppCompatActivity {
         }, 100);
     }
 
-    private void updateData() {
-        mWebView.loadUrl("http://2.0.0.1:20280/home");
+    private void updateData(String url) {
+        mWebView.loadUrl(url);
+        //mWebView.loadUrl("http://www.baidu.com");
     }
-//    private void updateData() {
-//        mWebView.loadUrl("http://www.baidu.com");
-//    }
 
 }
