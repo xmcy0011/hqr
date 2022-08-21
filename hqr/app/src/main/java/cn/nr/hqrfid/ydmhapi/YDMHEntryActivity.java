@@ -82,7 +82,7 @@ public class YDMHEntryActivity extends Activity implements IYDMHAPIEventHandler 
                             textView.setText("用户信息获取成功");
                         }
 
-                        UserInfo.getInstance().saveUserInfo(obj);
+                        UserInfo.getInstance().saveUserInfo(YDMHEntryActivity.this, obj);
                         Intent intent = new Intent(YDMHEntryActivity.this, io.dcloud.PandoraEntry.class);
                         // 设置自己为栈顶，退出后清楚所有activity
                         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);

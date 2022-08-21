@@ -3,7 +3,9 @@ package cn.nr.hqrfid;
 import android.content.Intent;
 import android.os.Handler;
 import android.os.Message;
+
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -79,7 +81,7 @@ public class AuthActivity extends AppCompatActivity {
                         Toast.makeText(AuthActivity.this, "离线", Toast.LENGTH_SHORT).show();
                         Toast.makeText(AuthActivity.this, obj, Toast.LENGTH_SHORT).show();
 
-                        UserInfo.getInstance().saveUserInfo(obj);
+                        UserInfo.getInstance().saveUserInfo(AuthActivity.this, obj);
                         startActivity(new Intent(AuthActivity.this, io.dcloud.PandoraEntry.class));
                         finish();
                         break;
