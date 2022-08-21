@@ -26,11 +26,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
-            android:exported="true"
-            android:theme="@style/Theme.Hqr.NoActionBar">
-        </activity>
-        <activity
             android:name=".ydmhapi.YDMHEntryActivity"
             android:exported="true"
             android:launchMode="singleTask" />
@@ -71,7 +66,7 @@
 
         <meta-data
             android:name="dcloud_appkey"
-            android:value="864f67ab0c1d6a789580ba2272025461" />
+            android:value="83776a62cecfdf7ba5199cef80992f79" />
     </application>
 
 </manifest>

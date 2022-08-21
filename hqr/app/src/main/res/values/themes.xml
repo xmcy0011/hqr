@@ -22,4 +22,5 @@
         <item name="android:colorEdgeEffect">#333333</item>
 <!--        <item name="android:windowBackground">@color/ime_background</item>-->
     </style>
+
 </resources>

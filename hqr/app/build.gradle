@@ -52,6 +52,11 @@ android {
     buildFeatures {
         viewBinding true
     }
+
+    aaptOptions {
+        additionalParameters '--auto-add-overlay'
+        ignoreAssetsPattern "!.svn:!.git:.*:!CVS:!thumbs.db:!picasa.ini:!*.scc:*~"
+    }
 }
 
 dependencies {

@@ -17,7 +17,6 @@ import com.dlxx.mam.Internal.sdk.OauthManager;
 import com.dlxx.mam.Internal.sdk.SendAuth;
 import com.dlxx.mam.Internal.sdk.YDMHAPIFactory;
 
-import cn.nr.hqrfid.MainActivity;
 import cn.nr.hqrfid.R;
 import cn.nr.hqrfid.model.UserInfo;
 
