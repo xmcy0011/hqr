@@ -98,8 +98,8 @@ public class YDMHEntryActivity extends Activity implements IYDMHAPIEventHandler 
 
     @Override
     public void onResp(SendAuth.Resp resp) {
-        Toast.makeText(YDMHEntryActivity.this, "onResp, authCode:" + resp.authCode + ",state:" + resp.mState,
-                Toast.LENGTH_SHORT).show();
+//        Toast.makeText(YDMHEntryActivity.this, "onResp, authCode:" + resp.authCode + ",state:" + resp.mState,
+//                Toast.LENGTH_SHORT).show();
 
         switch (resp.errCode) {
             case SendAuth.ErrCode.ERR_USER_CANCEL:
