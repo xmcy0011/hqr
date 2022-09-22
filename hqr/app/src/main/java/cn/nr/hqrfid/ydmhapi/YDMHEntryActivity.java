@@ -78,9 +78,9 @@ public class YDMHEntryActivity extends Activity implements IYDMHAPIEventHandler 
                         Log.i(TAG, "用户信息获取成功: " + msg.obj);
 
                         //Toast.makeText(YDMHEntryActivity.this, obj, Toast.LENGTH_SHORT).show();
-                        if (obj != null) {
-                            textView.setText("用户信息获取成功");
-                        }
+                        //if (obj != null) {
+                        //    textView.setText("用户信息获取成功");
+                        //}
 
                         UserInfo.getInstance().saveUserInfo(YDMHEntryActivity.this, obj);
                         Intent intent = new Intent(YDMHEntryActivity.this, io.dcloud.PandoraEntry.class);
